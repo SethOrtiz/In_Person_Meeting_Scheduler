@@ -1,0 +1,18 @@
+<aura:component controller="InPersonMeetingController" >
+    <aura:attribute name="searchString" type="String"/>
+    <aura:registerEvent name="mapEvent" type="c:updateMapResults"/>
+    <fieldset class="slds-box slds-theme--default slds-container--medium">
+        <form class="slds-form--stacked" >          
+            <lightning:input aura:id="businessSearchInput"
+                             type="text"
+                             name="businessSearch"
+                             value="{!v.searchString}"
+                             placeholder="Search for businesses near you"/> 
+            
+            <lightning:button label="Search" 
+                              class="slds-m-top--medium"
+                              variant="brand"
+                              onclick="{!c.submitSearch}"/>
+        </form>
+    </fieldset>
+</aura:component>

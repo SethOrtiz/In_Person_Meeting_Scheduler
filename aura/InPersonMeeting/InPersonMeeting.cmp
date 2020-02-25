@@ -1,0 +1,11 @@
+<aura:component controller="InPersonMeetingController" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global">
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="Contact" type="Contact" />
+    <aura:attribute name="mapMarkers" type="Object"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="mapEvent" event="c:updateMapResults" action="{!c.handleMapEvent}"/>
+    <c:MeetingHeader />
+    <c:BusinessSearch />
+    <c:MeetingMap mapMarkers= "{!v.mapMarkers}" />
+    <c:MeetingForm recordId="{!v.recordId}"/>
+</aura:component>   

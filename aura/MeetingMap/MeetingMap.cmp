@@ -1,0 +1,12 @@
+<aura:component>
+    <!-- attributes -->
+    <aura:attribute name="mapMarkers" type="Object"/>
+    <aura:attribute name="markersTitle" type="String" />
+    <!-- handlers-->
+    <aura:handler name="init" value="{!this }" action="{!c.doInit }"/>
+    <!-- the map component -->
+    
+    <div class="slds-box slds-theme--default slds-container--medium">
+        <lightning:map mapMarkers="{! v.mapMarkers }" markersTitle="{!v.markersTitle}" />
+    </div>
+</aura:component>

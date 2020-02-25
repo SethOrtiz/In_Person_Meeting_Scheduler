@@ -1,0 +1,24 @@
+<aura:component controller="InPersonMeetingController">
+    <aura:attribute name="recordId" type="Id" />
+    <!-- Find a new business to meet at -->
+    <div aria-labelledby="meetingform">
+        <!-- BOXED AREA -->
+        <fieldset class="slds-box slds-theme--default slds-container--medium">
+            <form class="slds-form--stacked">          
+                <lightning:input aura:id="meetingLocation" label="Location"
+                                 name="meetingLocation"
+                                 required="true"/> 
+                
+                <lightning:input type="datetime" aura:id="meetingDate" label="Date/Time of Meeting"
+                                 name="meetingDate"
+                                 formatter="Date/Time"
+                                 required="true"                           
+                                 />
+                <lightning:button label="Confirm and Submit" 
+                                  class="slds-m-top--medium"
+                                  variant="brand"
+                                  onclick="{!c.submitForm}"/>
+            </form>
+        </fieldset>
+    </div>
+</aura:component>
